@@ -1,5 +1,6 @@
 import csv
 import os
+import matplotlib.pyplot as plt
 
 application_info = []
 
@@ -16,3 +17,9 @@ with open('coop-application-tracker.csv', 'w') as f:
     writer = csv.writer(f)
     #write a row to the csv file
     writer.writerow(application_info)
+
+status = ["Applied", "Rejected", "Interview", "Offer", "No Response"]
+responses = [3, 1, 5, 7, 2]
+fig, ax = plt.subplots()
+ax.barh(status, responses, color = ["blue", "Red", "cyan", "green", "black"])
+plt.show()
